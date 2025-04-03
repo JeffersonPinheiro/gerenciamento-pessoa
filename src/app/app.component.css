@@ -1,0 +1,141 @@
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+    text-align: center;
+  }
+  
+  .content {
+    height: 70vh;
+    min-height: 300px;
+  }
+
+  h1 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .filters {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f8f9fa;
+    padding: 10px 15px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
+  
+  .filtro-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .filtro-container label {
+    font-weight: bold;
+    color: #555;
+  }
+  
+  .filtro-container select {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+  }
+  
+  .filtro-acoes {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .filtro-acoes button {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.3s ease;
+  }
+  
+  .filtro-acoes button:first-child {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .filtro-acoes button:first-child:hover {
+    background-color: #0056b3;
+  }
+  
+  .filtro-acoes button:last-child {
+    background-color: #dc3545;
+    color: white;
+  }
+  
+  .filtro-acoes button:last-child:hover {
+    background-color: #a71d2a;
+  }
+  
+  .ag-theme-alpine {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.15);
+  }
+  
+  .actions {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .btn-add, .btn-refresh {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-weight: bold;
+    transition: background 0.3s ease;
+  }
+  
+  .btn-add {
+    background-color: #28a745;
+    color: white;
+  }
+  
+  .btn-add:hover {
+    background-color: #218838;
+  }
+  
+  .btn-refresh {
+    background-color: #ffc107;
+    color: black;
+  }
+  
+  .btn-refresh:hover {
+    background-color: #e0a800;
+  }
+  
+  /* Estilização para a idade de idosos */
+  .idade-idoso {
+    color: red !important;
+    font-weight: bold;
+  }
+  
+  /* Responsividade */
+  @media (max-width: 768px) {
+    .filters {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .actions {
+      flex-direction: column;
+      gap: 10px;
+    }
+  }
