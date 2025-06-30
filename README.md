@@ -1,59 +1,89 @@
-# GerenciamentoPessoa
+Gerenciamento de Pessoas - Grid AG Grid
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.2.
+📌 Descrição
 
-## Development server
+Este é um projeto desenvolvido em Angular 19.2.4 utilizando AG Grid para gerenciamento de pessoas. A aplicação permite visualizar, adicionar, editar, excluir e filtrar registros diretamente na grid.
 
-To start a local development server, run:
+🚀 Tecnologias Utilizadas
 
-```bash
+Angular 19.2.4
+
+AG Grid
+
+TypeScript
+
+CSS
+
+RxJS (para chamadas assíncronas ao backend)
+
+📂 Estrutura do Projeto
+
+/
+├── src/
+│   ├── app/
+│   │   ├── components/
+│   │   │   ├── app.component.ts
+│   │   │   ├── app.component.html
+│   │   │   ├── app.component.css
+│   │   ├── models/
+│   │   │   ├── pessoa.dto.ts
+│   │   ├── services/
+│   │   │   ├── grid-data.service.ts
+│   ├── assets/
+│   ├── environments/
+│   ├── main.ts
+│   ├── index.html
+
+🛠️ Instalação e Configuração
+
+Clone o repositório:
+
+git clone https://github.com/seu-usuario/seu-repositorio.git
+
+Acesse a pasta do projeto:
+
+cd seu-repositorio
+
+Instale as dependências:
+
+npm install
+
+Execute o projeto:
+
 ng serve
-```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Acesse no navegador:
 
-## Code scaffolding
+http://localhost:4200
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+✨ Funcionalidades
 
-```bash
-ng generate component component-name
-```
+📋 Visualizar Pessoas: Lista todas as pessoas cadastradas.
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+➕ Adicionar Pessoa: Cria uma linha em branco na grid para preenchimento.
 
-```bash
-ng generate --help
-```
+✏️ Editar Pessoa: Clique diretamente na célula da grid para modificar os valores.
 
-## Building
+❌ Excluir Pessoa: Clique no botão "Deletar" na coluna de ações para remover um registro.
 
-To build the project run:
+🔍 Filtrar Pessoas: Utilize os filtros para exibir apenas registros específicos.
 
-```bash
-ng build
-```
+📝 Como Editar uma Pessoa?
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Para editar uma pessoa, basta clicar diretamente na célula da grid e alterar o valor desejado. Após editar, a alteração será salva automaticamente ao sair do campo editado.
 
-## Running unit tests
+🎨 Estilização da Grid
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+A grid está estilizada com AG Grid Alpine Theme, com ajustes responsivos e cores diferenciadas para idades maiores ou iguais a 60 anos.
 
-```bash
-ng test
-```
+📌 Melhorias Futuras
 
-## Running end-to-end tests
+Implementar paginação dinâmica.
 
-For end-to-end (e2e) testing, run:
+Melhorar a validação dos campos editáveis.
 
-```bash
-ng e2e
-```
+Adicionar mensagens de confirmação antes de excluir um registro.
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+📜 Licença
 
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Este projeto está sob a licença MIT.
