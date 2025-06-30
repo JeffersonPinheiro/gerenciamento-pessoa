@@ -64,28 +64,28 @@ export class AppComponent implements OnInit {
 
   filtroNome: string = '';
   filtroIdade: string = '';
-  filtroIdoso: string = 'todos';
+  filtroIdoso: 'Todas' | 'Idosas' | 'NaoIdosas' = 'Todas';
   gridApi: any;
 
   constructor(private gridDataService: GridDataService) {}
 
   ngOnInit(): void {
-    this.carregarPessoas();
+    this.carregarPessoas(this.filtroIdoso);
   }
 
-  carregarPessoas(): void {
-    this.gridDataService.listarPessoas().subscribe(
-      (data) => {
-        this.rowData = data;
-        setTimeout(() => {
-          if (this.gridApi) {
-            this.gridApi.refreshCells({ force: true });
-          }
-        }, 100);
-      },
-      (error) => console.error('Erro ao buscar pessoas:', error)
-    );
-  }
+  carregarPessoas(filtro: 'Todas' | 'Idosas' | 'NaoIdosas' = 'Todas'): void {
+  this.gridDataService.listarPessoas(filtro).subscribe(
+    (data) => {
+      this.rowData = data;
+      setTimeout(() => {
+        if (this.gridApi) {
+          this.gridApi.refreshCells({ force: true });
+        }
+      }, 100);
+    },
+    (error) => console.error('Erro ao buscar pessoas:', error)
+  );
+}
 
   adicionarPessoa(): void {
     const novaPessoa: PessoaDto = {
@@ -140,7 +140,8 @@ export class AppComponent implements OnInit {
   }
 
   filtrarPessoas(): void {
-    this.gridDataService.listarPessoas().subscribe((data) => {
+    console.log('Filtro selecionado:', this.filtroIdoso); 
+    this.gridDataService.listarPessoas(this.filtroIdoso).subscribe((data) => {
       let pessoasFiltradas = data;
       
       if (this.filtroNome) {
@@ -155,9 +156,9 @@ export class AppComponent implements OnInit {
         );
       }
       
-      if (this.filtroIdoso === 'idosos') {
+      if (this.filtroIdoso === 'Idosas') {
         pessoasFiltradas = pessoasFiltradas.filter(p => p.idade >= 60);
-      } else if (this.filtroIdoso === 'nao-idosos') {
+      } else if (this.filtroIdoso === 'NaoIdosas') {
         pessoasFiltradas = pessoasFiltradas.filter(p => p.idade < 60);
       }
       
@@ -168,7 +169,7 @@ export class AppComponent implements OnInit {
   limparFiltros(): void {
     this.filtroNome = '';
     this.filtroIdade = '';
-    this.filtroIdoso = 'todos';
+    this.filtroIdoso = 'Todas';
     this.carregarPessoas();
   }
 

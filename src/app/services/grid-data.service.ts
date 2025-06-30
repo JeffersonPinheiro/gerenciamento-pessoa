@@ -11,8 +11,8 @@ export class GridDataService {
 
   constructor(private http: HttpClient) {}
 
-   listarPessoas(apenasIdosos?: boolean): Observable<PessoaDto[]> {
-    const url = apenasIdosos !== undefined ? `${this.apiUrl}/ListarPessoas?apenasIdosos=${apenasIdosos}` : `${this.apiUrl}/ListarPessoas`;
+  listarPessoas(filtro: 'Todas' | 'Idosas' | 'NaoIdosas' = 'Todas'): Observable<PessoaDto[]> {
+    const url = `${this.apiUrl}/ListarPessoas?filtro=${filtro}`;
     return this.http.get<PessoaDto[]>(url);
   }
 
